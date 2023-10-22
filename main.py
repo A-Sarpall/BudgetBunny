@@ -24,7 +24,7 @@ st.markdown(
 
 #logo
 # Create a Streamlit layout with two columns
-col1, col2, col3 = st.columns([0.5, 2, 4], gap = "small")
+col1, col2 = st.sidebar.columns([1, 3], gap = "small")
 
 # Add an image to the left column
 with col1:
@@ -34,13 +34,23 @@ with col1:
 with col2:
     st.title("BudgetBunny")
 
-with col3:
-    tab1, tab2 = st.tabs(["Budgeting", "Trading"])
+# Define a dictionary to store the pages
+pages = {
+    "Chat": "This is where you chat wth Bunny",
+    "Banking Information": "This is where you can see your banking information",
+}
 
-    with tab2:
-        st.write("feature is under construction")
+# Create a sidebar for navigation
+selected_page = st.sidebar.selectbox("Select a page", list(pages.keys()))
 
-# Centered button
-with st.markdown("<div class='centered'>"):
-    if st.button("+ Add Bank Account"):
-        webbrowser.open(url)
+st.empty()
+
+# Display the selected page content
+if selected_page in pages:
+    if selected_page is "Chat":
+        st.code(exec(open("budgetbunny.py").read()))
+
+    if selected_page is "Banking Information":
+        st.markdown("Banking Page")
+
+#st.code(exec(open("budgetbunny.py").read()))
