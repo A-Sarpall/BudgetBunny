@@ -12,10 +12,18 @@ def get_and_process_info(url, category):
         data = response.json()
         if data:
             st.header(f"{category} Information:")
-            for item in data:
-                st.subheader(f"{category} ID: {item['_id']}")
+            for i, item in enumerate(data, start=1):
+                st.subheader(f"{category} {i}: {item['_id']}")
                 for key, value in item.items():
-                    st.write(f"{key}: {value}")
+                    if(key == "_id"):
+                        st.write(f"ID: {value}")
+                    elif(key == "account_id"):
+                        st.write(f"Account ID: {value}")
+                    elif(key == "customer_id"):
+                        st.write(f"Customer ID: {value}")
+                    else:
+                        st.write(f"{key.capitalize()}: {value}")
+                        
         else:
             st.write(f"There are no {category.lower()}s for your account.")
     else:
