@@ -26,7 +26,10 @@ st.markdown(
 # Create a Streamlit layout with two columns
 col1, col2 = st.sidebar.columns([1, 3], gap = "small")
 
-st.sidebar.markdown(" ")
+st.sidebar.markdown(
+    """<div style="margin-top: 30px;"></div>""",
+    unsafe_allow_html=True,
+)
 
 # Add an image to the left column
 with col1:
