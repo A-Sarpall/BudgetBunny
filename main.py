@@ -48,7 +48,7 @@ st.empty()
 # Display the selected page content
 if selected_page in pages:
     if selected_page is "Chat":
-        st.code(exec(open("budgetbunny.py").read()))
+        exec(open("budgetbunny.py").read())
 
     if selected_page is "Banking Information":
-        st.code(exec(open("info.py").read()))
+        exec(open("info.py").read())
