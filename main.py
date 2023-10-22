@@ -51,6 +51,4 @@ if selected_page in pages:
         st.code(exec(open("budgetbunny.py").read()))
 
     if selected_page is "Banking Information":
-        st.markdown("Banking Page")
-
-#st.code(exec(open("budgetbunny.py").read()))
+        st.code(exec(open("info.py").read()))
