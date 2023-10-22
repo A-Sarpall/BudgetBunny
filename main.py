@@ -26,6 +26,8 @@ st.markdown(
 # Create a Streamlit layout with two columns
 col1, col2 = st.sidebar.columns([1, 3], gap = "small")
 
+st.sidebar.markdown(" ")
+
 # Add an image to the left column
 with col1:
     st.image("budgetbunny.png")
@@ -41,7 +43,7 @@ pages = {
 }
 
 # Create a sidebar for navigation
-selected_page = st.sidebar.selectbox("Select a page", list(pages.keys()))
+selected_page = st.sidebar.radio("Select a page", list(pages.keys()))
 
 st.empty()
 
