@@ -42,7 +42,7 @@ email = st.text_input("Email")
 password = st.text_input("Password", type="password")
 
 # Firebase Web API key
-api_key = "AIzaSyBiGNTXBSrKniaEE0tkn-ROUo6VA7M2S54"  # Replace with your Firebase API key
+api_key = "[REDACTED]"  # Replace with your Firebase API key
 
 # Firebase Authentication API endpoints
 base_url = "https://identitytoolkit.googleapis.com/v1"
