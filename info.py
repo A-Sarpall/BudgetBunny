@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 
 # Define the API key
-api_key = 'cf3dace5399745ddccec61640b16b2bb'
+api_key = '[Redacted]'
 
 # Define function to retrieve and process information
 def get_and_process_info(url, category):
